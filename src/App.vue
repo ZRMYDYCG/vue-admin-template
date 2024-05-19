@@ -4,9 +4,9 @@
 
 <template>
   <div>我是App根组件</div>
-  <SvgIcon name="phone"></SvgIcon>
+  <svg-icon name="phone"></svg-icon>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
