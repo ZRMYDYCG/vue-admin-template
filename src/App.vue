@@ -4,9 +4,7 @@
 
 <template>
   <div>我是App根组件</div>
-  <svg>
-    <use xlink:href="#icon-phone"></use>
-  </svg>
+  <SvgIcon name="phone"></SvgIcon>
 </template>
 
 <style scoped>
