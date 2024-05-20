@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+import Logo from './components/logo/index.vue'
 </script>
 
 <template>
   <div class="layout-container">
     <!--  左侧菜单  -->
-    <div class="layout-slider"></div>
+    <div class="layout-slider">
+      <Logo></Logo>
+    </div>
     <!--  顶部导航  -->
     <div class="layout-header"></div>
     <!--  内容展示区域  -->
@@ -14,7 +16,7 @@
     </div>
   </div>
 </template>
-Z
+
 <style scoped lang="scss">
 .layout-container {
   width: 100%;
