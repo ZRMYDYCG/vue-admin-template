@@ -1,12 +1,15 @@
 import { defineStore } from "pinia"
 import { reqLogin } from "@/api/user/index.ts"
-import type { loginForm } from "@/api/user/type.ts";
+import type { loginForm } from "@/api/user/type.ts"
+import { constantRoute } from "@/router/routes.ts"
+import { UserState } from "@/store/modules/types/type.ts"; // 引入常量路由
 
 const useUserStore = defineStore('userStore',{
     // 小仓库 - 存储数据
-    state: () => {
+    state: ():UserState => {
         return {
-            token: localStorage.getItem('token')
+            token: localStorage.getItem('token'),
+            menuRoutes: constantRoute
         }
     },
     // 异步 | 逻辑

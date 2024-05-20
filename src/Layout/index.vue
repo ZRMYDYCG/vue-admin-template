@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import Logo from './components/logo/index.vue'
+import Menu from './components/Menu/index.vue'
+import useUserStore from "@/store/modules/user/user.ts"
+
+const userStore = useUserStore()
 </script>
 
 <template>
@@ -7,6 +11,14 @@ import Logo from './components/logo/index.vue'
     <!--  左侧菜单  -->
     <div class="layout-slider">
       <Logo></Logo>
+      <!--   展示菜单   -->
+      <!--   滚动组件   -->
+      <el-scrollbar class="scrollbar">
+        <!--    菜单组件    -->
+        <el-menu background-color="#00152B" text-color="#ffffff">
+          <Menu :menuList="userStore.menuRoutes"></Menu>
+        </el-menu>
+      </el-scrollbar>
     </div>
     <!--  顶部导航  -->
     <div class="layout-header"></div>
@@ -25,6 +37,14 @@ import Logo from './components/logo/index.vue'
     width: $base-menu-width;
     height: 100vh;
     background-color: $base-menu-background;
+    .scrollbar {
+      width: 100%;
+      height: calc(100vh - $base-menu-logo-height);
+
+      .el-menu {
+        border-right: none;
+      }
+    }
   }
   .layout-header {
     position: fixed;
