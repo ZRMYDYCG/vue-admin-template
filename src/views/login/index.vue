@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import useUserStore from "@/store/modules/user/user.ts";
+import useUserStore from "@/store/modules/user/user.ts"
 import { useRouter } from "vue-router"
 import { getTime } from '@/utils/getTime/index.ts'
-import { ElNotification } from "element-plus";
+import { ElNotification } from "element-plus"
 
 const userStore = useUserStore()
 let router = useRouter()
