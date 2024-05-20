@@ -2,6 +2,7 @@
 import { reactive, ref } from "vue"
 import useUserStore from "@/store/modules/user/user.ts";
 import { useRouter } from "vue-router"
+import { getTime } from '@/utils/getTime/index.ts'
 import { ElNotification } from "element-plus";
 
 const userStore = useUserStore()
@@ -22,7 +23,7 @@ const login = async () => {
     ElNotification({
       type: 'success',
       message: '欢迎回来',
-      title: 'HI, 下午好'
+      title: 'HI ' + getTime()
     })
   } catch (error) {
     loading.value = false
