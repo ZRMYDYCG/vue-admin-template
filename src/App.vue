@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>App根组件
-  <el-button>ss</el-button>
-  </div>
+  <router-view></router-view>
 </template>
 
 <style scoped lang="scss">
