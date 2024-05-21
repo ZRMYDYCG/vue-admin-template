@@ -17,6 +17,7 @@ import setting from '../../../../setting.ts'
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
   p {
     margin-left: 10px;
   }

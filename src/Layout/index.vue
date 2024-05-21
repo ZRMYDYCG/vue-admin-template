@@ -15,7 +15,7 @@ const userStore = useUserStore()
       <!--   滚动组件   -->
       <el-scrollbar class="scrollbar">
         <!--    菜单组件    -->
-        <el-menu background-color="#00152B" text-color="#ffffff">
+        <el-menu router background-color="#00152B" text-color="#ffffff">
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
@@ -24,7 +24,7 @@ const userStore = useUserStore()
     <div class="layout-header"></div>
     <!--  内容展示区域  -->
     <div class="layout-main">
-      <p style="height: 120vh; background-color: red;">哈哈哈</p>
+      <router-view></router-view>r
     </div>
   </div>
 </template>
@@ -39,8 +39,8 @@ const userStore = useUserStore()
     background-color: $base-menu-background;
     .scrollbar {
       width: 100%;
-      height: calc(100vh - $base-menu-logo-height);
-
+      height: calc(100vh - $base-menu-logo-height - 30px);
+      margin-top: 30px;
       .el-menu {
         border-right: none;
       }

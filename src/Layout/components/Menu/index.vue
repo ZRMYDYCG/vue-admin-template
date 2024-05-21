@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+const $router = useRouter()
+
 defineProps(['menuList'])
+
+const goMenuItemViews = (path: any) => {
+  $router.push(path)
+}
 </script>
 
 <script lang="ts">
@@ -12,7 +19,7 @@ export default {
     <template v-for="(item, index) in menuList"  :key="item.path">
       <!--   没有子路由   -->
       <template v-if="!item.children">
-        <el-menu-item v-if="!item.meta.hidden" :index="item.path">
+        <el-menu-item v-if="!item.meta.hidden" :index="item.path" @click="goMenuItemViews(item.path)">
           <template #title>
             {{ item.meta.title }}
           </template>
