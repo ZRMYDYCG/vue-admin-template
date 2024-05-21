@@ -16,7 +16,7 @@ export const constantRoute = [
         component: () => import('@/Layout/index.vue'),
         name: 'layout',
         meta: {
-            title: 'layout',
+            title: '',
             hidden: false
         },
         redirect: '/home',
@@ -39,6 +39,7 @@ export const constantRoute = [
           title: 'IKUN-UI组件库源码',
           hidden: false
       },
+      redirect: '/GenericComponents',
       children: [
           {
               // 通用组件
@@ -49,6 +50,7 @@ export const constantRoute = [
                   title: '通用组件',
                   hidden: false
               },
+              redirect: '/GenericComponents/Button',
               children: [
                   {
                       path: '/GenericComponents/Button',
@@ -117,6 +119,7 @@ export const constantRoute = [
                   title: '数据展示组件',
                   hidden: false
               },
+              redirect: '/DataDisplayComponent/Avatar',
               children: [
                   {
                       path: '/DataDisplayComponent/Avatar',
@@ -209,6 +212,7 @@ export const constantRoute = [
                   title: '数据录入组件',
                   hidden: false
               },
+              redirect: '/DataEntryComponent/Switch',
               children: [
                   {
                       path: '/DataEntryComponent/Switch',
@@ -261,6 +265,7 @@ export const constantRoute = [
                   title: '信息反馈组件',
                   hidden: false
               },
+              redirect: '/FeedbackComponent/Slider',
               children: [
                   {
                       path: '/FeedbackComponent/Slider',

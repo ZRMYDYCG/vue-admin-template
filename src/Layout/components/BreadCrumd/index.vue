@@ -14,8 +14,9 @@ const changeIcon = () => {
   </el-icon>
   <!--   面包屑   -->
   <el-breadcrumb separator-icon="ArrowRight">
-    <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-    <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+    <el-breadcrumb-item v-for="(item, index) in $route.matched" :key="index" :to="item.path" v-show="item.meta.title">
+      {{ item.meta.title }}
+    </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
