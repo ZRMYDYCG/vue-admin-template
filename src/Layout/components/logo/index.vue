@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import setting from '../../../../setting.ts'
+import  useLayOutSettingStore from '@/store/modules/setting/setting.ts'
+
+const layoutSettingStore = useLayOutSettingStore()
 </script>
 
 <template>
   <div class="logo" v-if="setting.logoHidden">
     <img :src="setting.logo" alt="">
-    <p>{{ setting.title }}</p>
+    <p v-if="!layoutSettingStore.isFold">{{ setting.title }}</p>
   </div>
 </template>
 
