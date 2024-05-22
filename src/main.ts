@@ -7,6 +7,7 @@ import router from './router/index.ts' // 路由
 import ElementPlus from 'element-plus' // 完整引入
 import 'element-plus/dist/index.css'
 import pinia from './store/index.ts'
+import './permisstion.ts' // 路由鉴权
 
 const app = createApp(App)
 app.use(globalComponent) // 安装自定义插件
