@@ -3,7 +3,8 @@ import { defineStore } from "pinia"
 const useLayOutSettingStore = defineStore('layoutSettingStore', {
     state: () :any => {
         return {
-            isFold: false
+            isFold: false,
+            refresh: false
         }
     },
     actions: {

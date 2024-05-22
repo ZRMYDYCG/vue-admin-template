@@ -1,4 +1,20 @@
 <script setup lang="ts">
+import { watch,ref,nextTick } from "vue"
+import useLayOutSettingStore from '@/store/modules/setting/setting.ts'
+
+const layOutSettingStore = useLayOutSettingStore()
+
+let flag = ref(true)
+watch(() => layOutSettingStore.refresh, () => {
+  console.log(layOutSettingStore)
+  console.log(layOutSettingStore.refresh)
+  // 销毁
+  flag.value = false
+  // 销毁过后重新创建路由组件 实现刷新功能
+  nextTick(() => {
+    flag.value = true
+  })
+})
 
 </script>
 
@@ -6,7 +22,7 @@
   <router-view v-slot="{ Component }">
     <transition name="fade">
       <!--   渲染layout一级路由组件的子路由   -->
-      <component :is="Component"></component>
+      <component :is="Component" v-if="flag"></component>
     </transition>
   </router-view>
 </template>
