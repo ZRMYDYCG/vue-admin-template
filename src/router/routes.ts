@@ -36,11 +36,20 @@ export const constantRoute = [
       component: () => import('@/Layout/index.vue'),
       name: 'component',
       meta: {
-          title: '个人组件库',
+          title: '项目组件库',
           hidden: false
       },
-      redirect: '/GenericComponents',
+      redirect: '/component/desc',
       children: [
+          {
+              path: '/component/desc',
+              name: 'desc',
+              component: () => import('@/views/ComponentDesc/index.vue'),
+              meta: {
+                  title: '组件使用文档',
+                  hidden: false
+              }
+          },
           {
               // 通用组件
               path: '/GenericComponents',
