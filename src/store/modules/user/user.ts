@@ -1,5 +1,5 @@
 import { defineStore } from "pinia"
-import { reqLogin } from "@/api/user/index.ts"
+import { reqLogin, reqUserInfo } from "@/api/user/index.ts"
 import type { loginForm } from "@/api/user/type.ts"
 import { constantRoute } from "@/router/routes.ts"
 import { UserState } from "@/store/modules/types/type.ts"; // 引入常量路由
@@ -9,7 +9,9 @@ const useUserStore = defineStore('userStore',{
     state: ():UserState => {
         return {
             token: localStorage.getItem('token'),
-            menuRoutes: constantRoute
+            menuRoutes: constantRoute,
+            username: '',
+            avatar: ''
         }
     },
     // 异步 | 逻辑
@@ -24,6 +26,22 @@ const useUserStore = defineStore('userStore',{
            } else {
                return Promise.reject(new Error('登录失败'))
            }
+        },
+        // 获取用户信息
+        async userInfo() {
+            const res = await reqUserInfo()
+            if(res.code === 200) {
+                this.username = res.data.checkUser.username
+                this.avatar = res.data.checkUser.avatar
+            } else {
+
+            }
+        },
+        userLogout() {
+            this.token = ''
+            this.username = ''
+            this.avatar = ''
+            localStorage.removeItem('token')
         }
     },
     getters: {

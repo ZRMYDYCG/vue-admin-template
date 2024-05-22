@@ -74,7 +74,6 @@ const $route = useRoute()
   }
   .layout-main {
     position: absolute;
-    background-color: darkkhaki;
     left: $base-menu-width;
     top: $base-header-height;
     width: calc(100% - $base-menu-width);

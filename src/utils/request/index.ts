@@ -1,4 +1,5 @@
 import axios from 'axios'
+import useUserStore from "@/store/modules/user/user.ts"
 
 let request = axios.create({
     baseURL: import.meta.env.VITE_APP_BASE_API,
@@ -7,6 +8,11 @@ let request = axios.create({
 
 request.interceptors.request.use((config) => {
     // config配置对象中的一个重要属性 headers 请求头, 通常用来给服务其携带公共参数
+    const userStore = useUserStore()
+    console.log(userStore)
+    if(userStore.token) {
+        config.headers.token = userStore.token
+    }
     return config
 })
 

@@ -25,7 +25,7 @@ export const constantRoute = [
                 path: '/home',
                 component: () => import('@/views/home/index.vue'),
                 meta: {
-                    title: '首页',
+                    title: '博客',
                     hidden: false
                 }
             }
@@ -36,7 +36,7 @@ export const constantRoute = [
       component: () => import('@/Layout/index.vue'),
       name: 'component',
       meta: {
-          title: 'IKUN-UI组件库源码',
+          title: '个人组件库',
           hidden: false
       },
       redirect: '/GenericComponents',
