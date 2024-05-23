@@ -1,9 +1,13 @@
 <template>
-  <IkButton>按钮</IkButton>
+  <button>
+    <span class="ik-button_inner">
+      <slot></slot>
+    </span>
+  </button>
 </template>
 
 <script setup lang="ts">
-import IkButton from './components/src/button.vue'
+
 </script>
 
 <style lang="scss" scoped>
