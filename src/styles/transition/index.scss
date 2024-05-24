@@ -1,0 +1,88 @@
+// drawer ============================= start
+// mask
+.drawer-fade-enter-active,
+.drawer-fade-leave-active {
+  transition: all 0.28s;
+}
+
+.drawer-fade-enter-from,
+.drawer-fade-leave-to {
+  opacity: 0;
+}
+
+.drawer-slide-enter-active,
+.drawer-slide-leave-active {
+  transition: all 0.28s;
+}
+.drawer-slide-enter-from,
+.drawer-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.drawer-slide__right-enter-active,
+.drawer-slide__right-leave-active {
+  opacity: 1;
+  transition: all 0.28s;
+}
+.drawer-slide__right-enter-from,
+.drawer-slide__right-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.drawer-slide__top-enter-active,
+.drawer-slide__top-leave-active {
+  opacity: 1;
+  transition: all 0.28s;
+}
+.drawer-slide__top-enter-from,
+.drawer-slide__top-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.drawer-slide__bottom-enter-active,
+.drawer-slide__bottom-leave-active {
+  opacity: 1;
+  transition: all 0.28s;
+}
+.drawer-slide__bottom-enter-from,
+.drawer-slide__bottom-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+// drawer ============================= end
+
+// lockScreen ============================= start
+.lockScreen-enter-active,
+.lockScreen-leave-active {
+  transition: all 0.32s;
+}
+.lockScreen-enter-from,
+.lockScreen-leave-to {
+  opacity: 0;
+  transform: translateY(-80%);
+}
+// lockScreen ============================= end
+
+// tag =================================== start
+.tag-fade-enter-active {
+  animation: tag-bounce-in 0.24s;
+}
+.tag-fade-leave-active {
+  animation: tag-bounce-in 0.22s reverse;
+}
+@keyframes tag-bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// tag =================================== end
